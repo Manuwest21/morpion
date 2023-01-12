@@ -6,8 +6,8 @@ grille= {
 
 signe={
     
-    'a':'O',
-    'b':'X'
+    'jr1':'O',
+    'jr2':'X'
 }
 
 #trouver à l'afficher
@@ -23,3 +23,30 @@ def afficher_grille(tabl):
     print ("{}|{}|{}".format(tabl['c'][0],tabl['c'][1],tabl['c'][2])) 
 
 afficher_grille(grille)
+
+
+def grille_gagnante(tab):
+    """_summary_
+
+    Args:prend grille morpion paramétre
+        tab (_type_): grille
+        renvoi booléen(true: E  grille gagnante,false: pas de grille de gagnante)
+    """
+    if grille['a'][0]==grille['a'][1]==grille['a'][2]:
+        return True
+    elif grille['b'][0]==grille['b'][1]==grille['b'][2]:
+        return True
+    elif grille['c'][0]==grille['c'][1]==grille['c'][2]:
+        return True
+    elif grille['a'][0]==grille['b'][0]==grille['c'][0]:
+        return True
+    elif grille['a'][1]==grille['b'][1]==grille['c'][1]:
+        return True
+    elif grille['a'][2]==grille['b'][2]==grille['c'][2]:
+        return True
+    elif grille['a'][0]==grille['b'][1]==grille['c'][2]:
+        return True
+    elif grille['a'][2]==grille['b'][1]==grille['c'][0]:
+        return True
+    else:
+        return False
